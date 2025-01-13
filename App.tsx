@@ -6,6 +6,7 @@ import BottomTabNavigation from './src/components/BottomTabNavigation/BottomTabN
 import Login from './src/components/Auth/Login';
 import GetStarted from './src/components/GetStarted/GetStarted';
 import SignUp from './src/components/Auth/SignUp';
+import SplashScreen from 'react-native-splash-screen'
 
 export type RootStackParamList = {
   SignUp: undefined;
@@ -17,6 +18,12 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App: React.FC = () => {
+
+  useEffect(() => {
+    SplashScreen.hide();
+  },[]);
+
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="GetStarted">
